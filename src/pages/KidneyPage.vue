@@ -1,6 +1,6 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <KidneySimulation :width="width" :height="height" debug="true" />
+    <KidneySimulation :width="width" :height="height" debug="false" />
     <q-resize-observer @resize="onResize" />
     <div class="controls">
 

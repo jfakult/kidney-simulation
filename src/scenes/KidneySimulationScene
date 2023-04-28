@@ -57,9 +57,9 @@ const createScene = (canvas, modelName, debug = false) => {
             console.log("Position", kidneyModel.position)
 
             // Make the model bigger
-            kidneyModel.scaling = new Vector3(5, 5, 5);
+            //kidneyModel.scaling = new Vector3(5, 5, 5);
 
-            kidneyModel.position = Vector3(0.07 * 5, -0.29 * 5, 0);
+            kidneyModel.position = Vector3(0.07 * 1, -0.29 * 1, 0);
         }
     )
 
