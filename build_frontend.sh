@@ -1,7 +1,8 @@
 #!/bin/bash
 
-echo "You may need to run this as root"
+echo "NOTE: You may need to run this as root"
 
-npx quasar build && \
+sudo -u "butlah" bash -c "quasar build" && \
 cd dist/spa/ && \
-cp -R * /usr/share/nginx/html/simulation/kidney
+rm -rf /usr/share/nginx/html/simulation/* && \
+cp -R * /usr/share/nginx/html/simulation

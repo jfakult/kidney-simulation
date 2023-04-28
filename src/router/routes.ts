@@ -4,7 +4,10 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
+    children: [
+      { path: '', component: () => import('pages/IndexPage.vue') },
+      { path: 'kidney', component: () => import('pages/KidneyPage.vue'), meta: { title: 'Kidney Transport Simulation' } },
+    ],
   },
 
   // Always leave this as last one,
