@@ -51,7 +51,9 @@ const createScene = (canvas, modelName) => {
         }
     );
 
-    return scene;
+    engine.runRenderLoop(() => {
+      scene.render();
+    });
 };
 
 export { createScene };
