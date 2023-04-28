@@ -1,41 +1,15 @@
-# Kidney Simulation (kidney-simulation)
+# kidney-simulation
+
+## What is this?
 
 3D Kidney Simulator built with babylonJS for educational purposes that allows users to interact with a Kidney and simulate the effects of various drugs
 
-## Install the dependencies
-```bash
-yarn
-# or
+## Project setup
+```
 npm install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
+### Compiles and minifies for production
 ```
-
-
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
+./build_frontend.sh
 ```
-
-
-### Format the files
-```bash
-yarn format
-# or
-npm run format
-```
-
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js).
