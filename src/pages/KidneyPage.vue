@@ -1,6 +1,6 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <KidneySimulation :width="width" :height="height" />
+    <KidneySimulation :width="width" :height="height" debug="true" />
     <q-resize-observer @resize="onResize" />
     <div class="controls">
 
@@ -15,13 +15,13 @@ import KidneySimulation from '../components/KidneySimulation.vue';
 export default defineComponent({
     name: 'KidneyPage',
     setup() {
-        const width = ref(500);
-        const height = ref(500);
+        const width = ref(800);
+        const height = ref(600);
 
         function onResize(size: { width: number; height: number; })
         {
-          width.value = size.width;
-          height.value = size.height;
+          //width.value = size.width;
+          //height.value = size.height;
         }
 
         return {

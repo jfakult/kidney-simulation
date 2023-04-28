@@ -8,7 +8,7 @@ import { createScene } from '../scenes/KidneySimulationScene';
 export default {
     name: 'KidneySimulation',
 
-    props: [ 'width', 'height' ],
+    props: [ 'width', 'height', 'debug' ],
 
     setup(props) {
         const kidneyCanvas = ref(null);
@@ -18,10 +18,11 @@ export default {
 
         // This require statement is important. It tells webpack to include the model in the final build of the app.
         const model = require('../assets/models/VH_M_Kidney_R.glb')  // https://hubmapconsortium.github.io/ccf-releases/v1.2/docs/ref-organs/kidney-male-right.html
+        const file_path = model.default;
 
-        onMounted(() => {
+        onMounted(async () => {
             if (kidneyCanvas.value) {
-                createScene(kidneyCanvas.value, model.default);
+                await createScene(kidneyCanvas.value, file_path, props.debug || false);
             }
         });
 

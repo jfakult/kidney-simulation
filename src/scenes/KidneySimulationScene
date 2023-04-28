@@ -1,6 +1,8 @@
 // BabylonJS code
 
 import "@babylonjs/loaders/glTF";
+import "@babylonjs/inspector";
+// import "@babylonjs/core/Debug/debugLayer";
 
 import { Engine, Scene, FreeCamera, Vector3, MeshBuilder, StandardMaterial, Color3, HemisphericLight, ArcRotateCamera, SceneLoader } from "@babylonjs/core";
 /*const createScene = (canvas) => {
@@ -22,18 +24,21 @@ import { Engine, Scene, FreeCamera, Vector3, MeshBuilder, StandardMaterial, Colo
     scene.render();
   });
 };*/
-const createScene = (canvas, modelName) => {
+const createScene = (canvas, modelName, debug = false) => {
     const engine = new Engine(canvas);
     const scene = new Scene(engine);
 
     const camera = new ArcRotateCamera(
         "camera",
+        0,
+        0,
         1,
-        1,
-        10,
         Vector3.Zero(),
         scene
     );
+
+    // Set camera near plane to 0.1
+    camera.minZ = 0.1;
     
     camera.attachControl(canvas, true);
 
@@ -47,12 +52,24 @@ const createScene = (canvas, modelName) => {
         scene,
         (meshes) => {
             const kidneyModel = meshes[0];
-            kidneyModel.scaling = new Vector3(0.1, 0.1, 0.1);
+
+            // Move the model to the origin
+            console.log("Position", kidneyModel.position)
+
+            // Make the model bigger
+            kidneyModel.scaling = new Vector3(5, 5, 5);
+
+            kidneyModel.position = Vector3(0.07 * 5, -0.29 * 5, 0);
         }
-    );
+    )
+
+    if (debug)
+    {
+        scene.debugLayer.show()
+    }
 
     engine.runRenderLoop(() => {
-      scene.render();
+        scene.render();
     });
 };
 
