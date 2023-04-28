@@ -1,24 +1,15 @@
 # kidney-simulation
 
+## What is this?
+
+3D Kidney Simulator built with babylonJS for educational purposes that allows users to interact with a Kidney and simulate the effects of various drugs
+
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
 ### Compiles and minifies for production
 ```
-npm run build
+./build_frontend.sh
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
